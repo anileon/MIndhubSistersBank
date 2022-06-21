@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINDHUB SISTERS BANK</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Signika:400' rel='stylesheet' type='text/css'>
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/loan-application.css">
+    <link rel="icon" href="./assets/favicon.ico">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div id="app">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <div class="header_img"> <img src="" alt=""> </div>
+            <div class="d-flex w-100 justify-content-center me-5">
+                <img src="./assets/logo-bank-1.png" alt="bank-logo" width="300">
+            </div>
+        </header>
+
+        <div>
+            <span> WELCOME: </span>
+            <h3><strong>{{client.firstName}} {{client.lastName}}</strong></h3>
+        </div>
+
+        <div class="sidebar">
+            <div id="body-pd">
+
+                <div class="l-navbar" id="nav-bar">
+                    <nav class="nav">
+                        <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i>
+                                <span class="nav_logo-name"> SISTERS BANK </span> </a>
+                            <div class="nav_list">
+                                <a href="./index.html" class="nav_link active">
+                                    <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name"> Main Home </span>
+                                </a>
+                                <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span
+                                        class="nav_name">Profile</span> </a>
+                                <a href="./accounts.html" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i>
+                                    <span class="nav_name">Your Accounts</span> </a>
+                                <a href="./transfer.html" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span
+                                        class="nav_name">Your Transactions</span> </a>
+                                <a href="./cards.html" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                                    <span class="nav_name">Your Cards</span>
+                                </a>
+                                <a href="#" class="nav_link"> <i
+                                        class='bx bx-bar-chart-alt-2 nav_icon'></i>
+                                    <span class="nav_name">Your Loans</span>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav_link" v-on:click="logOut"> <i class='bx bx-log-out nav_icon'></i> <span
+                                class="nav_name">SignOut</span> </a>
+                </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- <div class="app">
+
+             <div class="cardList">
+                <button class="cardList__btn btn btn--left">
+                    <div class="icon">
+                        <svg>
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </div>
+                </button>
+
+                <div class="cards__wrapper">
+                    <div class="card current--card">
+                        <div class="card__image">
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+
+                    <div class="card next--card">
+                        <div class="card__image">
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+
+                    <div class="card previous--card">
+                        <div class="card__image">
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <button class="cardList__btn btn btn--right">
+                    <div class="icon">
+                        
+                    </div>
+                </button>
+            </div>
+
+            <div class="infoList">
+                <div class="info__wrapper">
+                    <div class="info current--info">
+                        <h1 class="text name">Highlands</h1>
+                        <h4 class="text location">Mortgage</h4>
+                        <p class="text description">The mountains are calling</p>
+                    </div>
+
+                    <div class="info next--info">
+                        <h1 class="text name">Auto</h1>
+                        <h4 class="text location">Peru</h4>
+                        <p class="text description">Adventure is never far away</p>
+                    </div>
+
+                    <div class="info previous--info">
+                        <h1 class="text name">Chamonix</h1>
+                        <h4 class="text location">Personal</h4>
+                        <p class="text description">Let your dreams come true</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="app__bg">
+                <div class="app__bg__image current--image">
+                    <img src="" alt="" />
+                </div>
+                <div class="app__bg__image next--image">
+                    <img src="" alt="" />
+                </div>
+                <div class="">
+                    <img src="" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="loading__wrapper">
+            <div class="loader--text">Loading...</div>
+            <div class="loader">
+                <span></span>
+            </div>
+        </div>
+
+
+        <svg class="icons" style="display: none;">
+            <symbol id="arrow-left" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                <polyline points='328 112 184 256 328 400'
+                    style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+            </symbol>
+            <symbol id="arrow-right" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'>
+                <polyline points='184 112 328 256 184 400'
+                    style='fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px' />
+            </symbol>
+        </svg> 
+
+        <div class="support">
+            <a href="" target="_blank"><i class="fab fa-twitter-square"></i></a>
+            <a href="" target="_blank"><i class="fab fa-dribbble"></i></a>
+        </div>  -->
+        <div class="card-padre">
+            <a href="#survey-form">
+                <article class="card-1" @click="selectLoan(personalLoan[0])">
+                    <div class="card-content">
+                        <h4 class="card-title"> {{personalLoan[0].name}}</h4>
+                        <span class="card-subtitle"> Click here to apply </span>
+                        <p class="card-description"> max amount available bla bla.</p>
+                    </div>
+                </article>
+            </a>
+            <a href="#survey-form">
+            <article class="card-2" @click="selectLoan(mortgageLoan[0])">
+                <div class="card-content">
+                    <h4 class="card-title"> {{mortgageLoan[0].name}}</h4>
+                    <span class="card-subtitle"> Click here to apply</span>
+                    <p class="card-description"> max amount available bla bla bla</p>
+                </div>
+            </article>
+            </a>
+
+            <a href="#survey-form">
+            <article class="card-3" @click="selectLoan(autoLoan[0])">
+                <div class="card-content">
+                    <h4 class="card-title"> {{autoLoan[0].name}}</h4>
+                    <span class="card-subtitle"> Click here to apply </span>
+                    <p class="card-description"> max amount available bla bla bla</p>
+                </div>
+            </article>
+            </a>
+        </div>
+
+        <div class="form-complete" v-if="selectedLoan != 'null'">
+            <!-- <div class="d-flex justify-content-around">
+            <div>
+                <h6> Loan to apply: </h6>
+                <p> {{selectedLoan.name}}</p>
+            </div>
+
+            <div>
+                <h6 v-if="selectedLoan != 'null'">Payment {{selectedLoan.payments.toString()}}.</h6>
+            </div>
+
+            <div>
+                <h6>Max Amount available </h6>
+                <p> {{selectedLoan.maxAmount}} </p>
+            </div>
+        </div> -->
+
+            <!-- <main id="main">
+            <div id="main-overlay"> -->
+
+            <form id="survey-form" @submit.prevent="createLoan">
+                <div>
+                    <h6> Loans available </h6>
+                    <select required v-model="selectedLoan">
+                        <option v-bind:value="loan" v-for="loan in loans">{{loan.name}}</option>
+                    </select>
+                </div>
+                <div>
+                    <h6>Payments</h6>
+                    <select required v-model="payment" v-if="selectedLoan != 'null'">
+                        <option v-for="payment in selectedLoan.payments"> {{payment}} </option>
+                    </select>
+                </div>
+                <div>
+                    <h6>Amount</h6>
+                    <input type="number" v-bind:max="selectedLoan.maxAmount" placeholder="amount" v-model="amount">
+                </div>
+                <div>
+                    <h6> Choose the account</h6>
+                    <select required v-model="numberAccountDestiny">
+                        <option v-for="account in accounts"> {{account.number}} </option>
+                    </select>
+                </div>
+                <div class="input-container">
+                    <button type="submit" class="btn btn-secondary">
+                        Confirm transaction
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!----  Team work experience  ----->
+    <!----  submit  ----->
+    <!-- <div class="input-container">
+                                <input type="submit" name="submit" value="Submit">
+                            </div> -->
+    <!---- End  submit  ----->
+
+    <!-- <form class="form" @submit.prevent="createLoan">
+            <div class="d-flex flex-row w-100">
+                <h6> Loans available </h6>
+                <select required v-model="selectedLoan">
+                    <option v-bind:value="loan" v-for="loan in loans">{{loan.name}}</option>
+                </select>
+            </div>
+            <div>
+                <h6>Payments</h6>
+                <select required v-model="payment" v-if="selectedLoan != 'null'">
+                    <option v-for="payment in selectedLoan.payments"> {{payment}} </option>
+                </select>
+            </div>
+            <div>
+                <h6>Amount</h6>
+                <input type="number" v-bind:max="selectedLoan.maxAmount" placeholder="amount" v-model="amount">
+            </div>
+            <div>
+                <h6> Choose the account</h6>
+                <select required v-model="numberAccountDestiny">
+                    <option v-for="account in accounts"> {{account.number}} </option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-secondary">
+                Confirm transaction
+            </button>
+        </form> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./js/loan-application.js"></script>
+</body>
+
+</html>
